@@ -52,5 +52,65 @@
             
         </div>
     </section>
+    <!-- about -->
+    <section id="about">
+    <!-- text-about -->
+        <div class="about-text">
+            <h1>About Us</h1>
+            <h2>FreeLancing FrontEnd Developer</h2>
+            <p>Front end developers are some of the most in-demand roles, and for good reason—
+            we wouldn’t get to enjoy internet black holes without them. In a second, we’ll break down all the skills front end developers use and need, but here is a quick front end development definition:
+        </p>
+         <!--btn  -->
+        <button>More Details</button>
+        </div>
+        <!-- about-img -->
+        <div class="about-model">
+            <img src="./assets/img/about-model.png">
+        </div>
+    </section>
+    <section id="services">
+        <!-- services heading -->
+        <div class="s-heading">
+            <h1>Services</h1>
+            <p>Here Is The Some Services Which We provide you </p>
+        </div>
+        <!-- services box container -->
+        <div class="s-b-container">
+            <!-- box-1 -->
+            <div class="s-box">
+                <!-- services-img -->
+                <div class="s-b-img">
+                    <div class="s-type">Front-End</div>
+                    <img src="./assets/img/s1.png">
+                </div>
+                <div class="s-b-text">
+                    <a href="#">With Divi, every part of your website is customizable. You have complete freedom to create the perfect website for you or your clients.</a>
+                </div> 
+            </div>
+            <!-- box-2 -->
+            <div class="s-box">
+                <!-- services-img -->
+                <div class="s-b-img">
+                    <div class="s-type">Back-End</div>
+                    <img src="./assets/img/s2.png">
+                </div>
+                <div class="s-b-text">
+                    <a href="#">With Divi, every part of your website is customizable. You have complete freedom to create the perfect website for you or your clients.</a>
+                </div> 
+            </div>
+            <!-- box-3 -->
+            <div class="s-box">
+                <!-- services-img -->
+                <div class="s-b-img">
+                    <div class="s-type">SEO</div>
+                    <img src="./assets/img/s3.jpg">
+                </div>
+                <div class="s-b-text">
+                    <a href="#">With Divi, every part of your website is customizable. You have complete freedom to create the perfect website for you or your clients.</a>
+                </div> 
+            </div>
+        </div>
+    </section>
 </body>
 </html>
