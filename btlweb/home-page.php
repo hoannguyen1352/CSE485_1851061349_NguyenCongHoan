@@ -53,6 +53,7 @@
 		}else{
 		?>
 			<li><a href="logout-user.php">Logout</a></li>
+			<li><a href="Change-Pro.php">Change Profile</a></li>
 		<?php
 		}
 		?>
