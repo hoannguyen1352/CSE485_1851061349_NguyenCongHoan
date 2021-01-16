@@ -36,11 +36,7 @@
 				<div class="profile-userpic">
 					<input type="file" name="profileImage" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;"> 
 					<?php
-					if(!isset($fetch['avatar'])){
-					?>
-						<img src="https://static.change.org/profile-img/default-user-profile.svg" class="img-responsive" onClick="triggerClick()" id="profileDisplay">
-					<?php
-						}elseif($fetch['avatar'] != ''){
+					if($fetch['avatar'] != ''){
 					?>
 						<img src="images/<?php echo $fetch['avatar'] ?>" width="80" onClick="triggerClick()" id="profileDisplay" style="margin-left:70px">    
 					<?php
@@ -53,10 +49,7 @@
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
-				<?php
-					if(isset($fetch['name'])){
-				?>
-					<div class="profile-usertitle">
+				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
 					<?php echo $fetch['name'] ?>
 					</div>
@@ -64,19 +57,6 @@
 						Developer
 					</div>
 				</div>
-				<?php
-					}else{
-				?>
-					<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-					</div>
-					<div class="profile-usertitle-job">
-						Developer
-					</div>
-					</div>
-				<?php
-					}
-				?>
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
@@ -89,19 +69,19 @@
 				<div class="profile-usermenu">
 					<ul class="nav">
 						<li class="active">
-							<a href="form-cv.php">
+							<a href="#">
 							<i class="glyphicon glyphicon-home"></i>
-							GoHome </a>
+							 About</a>
 						</li>
 						<li>
 							<a href="#">
 							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
+							Services</a>
 						</li>
 						<li>
 							<a href="#" target="_blank">
 							<i class="glyphicon glyphicon-ok"></i>
-							Tasks </a>
+							Portfolio</a>
 						</li>
 						<li>
 							<a href="#">
@@ -114,9 +94,6 @@
 			</div>
 		</div>
 
-		<?php
-			if(isset($fetch['name'])){
-		?>
 		<form method="POST" name="change-pro">
 			<div class="col-md-8">
 				<div class="profile-content">
@@ -133,40 +110,12 @@
 					<input type="text" name="yourcountry" class="form-control" placeholder="YourCountry" value="<?php echo $fetch['YourCountry'] ?>">
 				</div>
 				<div class="form-group">
-				<button type="submit" name="change-info" class="btn btn-primary" id="btn">Change</button>
+				<button type="submit" class="btn btn-primary" id="btn">Change</button>
 				<button type="button" class="btn btn-secondary" id="btn"><a href="change-pro.php">Close</a></button>
 				</div>
 				</div>
 			</div>
 		</form>
-		<?php
-			}else{
-		?>
-			<form method="POST" name="change-pro">
-			<div class="col-md-8">
-				<div class="profile-content">
-				<div class="form-group">
-					<label for="">Name</label>
-					<input type="text" name="name" class="form-control" placeholder="Name">
-					<label for="">Age</label>
-					<input type="date" name="age" class="form-control" placeholder="Age">
-					<label for="">Sex</label>
-					<input type="text" name="sex" class="form-control" placeholder="Male/Female">
-					<label for="">PhoneNumber</label>
-					<input type="text" name="phonenumber" class="form-control" placeholder="PhoneNumber">
-					<label for="">YourCountry</label>
-					<input type="text" name="yourcountry" class="form-control" placeholder="YourCountry">
-				</div>
-				<div class="form-group">
-				<button type="submit" name="change-info" class="btn btn-primary" id="btn">Change</button>
-				<button type="button" class="btn btn-secondary" id="btn"><a href="change-pro.php">Close</a></button>
-				</div>
-				</div>
-			</div>
-		</form>
-		<?php
-			}
-		?>
 	</div>
 </div>
 <center>

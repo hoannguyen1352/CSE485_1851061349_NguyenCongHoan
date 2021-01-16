@@ -5,6 +5,15 @@
 		$_SESSION['status'] = 'notverified';
 	}
 
+	if(isset($_SESSION['id'])){
+        $id = $_SESSION['id'];
+	}else{
+        $id='';
+	}
+
+	$sql07 = "SELECT * FROM users WHERE id='$id'";
+	$rs01 = mysqli_query($con,$sql07);
+	$fetch05 = mysqli_fetch_all($rs01);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,7 +26,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/icon.png">
-    <link rel="stylesheet" type="text/css" href="css/stylehome.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/stylehome.css"/>
 	<link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </head>
@@ -33,7 +42,7 @@
 	<?php
 		}else{
 	?>
-		<a href="#" class="logo"><?php echo $_SESSION['name'] ?></a>
+		<a href="#" class="logo" style="margin-left: 50px;"><?php echo $_SESSION['name'] ?></a>
 	<?php
 	}
 	?>
@@ -52,8 +61,22 @@
 		<?php
 		}else{
 		?>
-			<li><a href="logout-user.php">Logout</a></li>
+			<?php 
+			 if($_SESSION['email'] != 'echmattrang@gmail.com'){
+			?>
+			<li><a href="test2.php">Change CV</a></li>
+			<?php
+			}
+			?>
+			<?php 
+			if(($_SESSION['email'] == 'echmattrang@gmail.com')){
+			?>
+			<li><a href="member.php">Members</a></li>
+			<?php
+			}
+			?>
 			<li><a href="Change-Pro.php">Change Profile</a></li>
+			<li><a href="logout-user.php">Logout</a></li>
 		<?php
 		}
 		?>
@@ -70,7 +93,13 @@
 	<!--details--------------->
 	<p class="details">if you want to create a new beautifull Curriculum Vitae.CV is also an important factor to help employers assess the suitability of candidates with the job they are recruiting or not.</p>
 	<!--cv button-------------------->
-	<a href="form-cv.php" class="cv-btn">Create</a>
+	<?php
+	if(isset($_SESSION['email'])&&$_SESSION['email'] != 'echmattrang@gmail.com'){
+	?>
+	<a href="form-cv.php" class="cv-btn">Go to CV</a>
+	<?php
+	}
+	?>
 	</div>
 		<!--down arrow-------------->
 	<div class="black-line" ></div>

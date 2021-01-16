@@ -17,6 +17,8 @@
 	}else{
         $id='';
 	}
+
+	$sql07 = "SELECT * FROM about,users WHERE about.id=users.id";
 ?>
 <!doctype html>
 <html>
@@ -46,7 +48,7 @@
 	<?php
 		}else{
 	?>
-		<a href="#" class="logo"><?php echo $_SESSION['name'] ?></a>
+		<a href="home-page.php" class="logo"><?php echo $_SESSION['name'] ?></a>
 	<?php
 	}
 	?>
@@ -54,10 +56,6 @@
 	<div class="toggle"></div>
 	<ul class="menu">
         <li class="active"><a href="#main" >Home</a></li>	
-        <li><a href="#about">About</a></li>	
-        <li><a href="#services">Services</a></li>	
-        <li><a href="#portfolio">Portfolio</a></li>		
-        <li><a href="#contact-form">Contact</a></li>	
         <?php
 		if($_SESSION['status'] == 'notverified'){
 		?>
@@ -66,6 +64,10 @@
 		<?php
 		}else{
 		?>
+			<li><a href="#about">About</a></li>	
+			<li><a href="#services">Services</a></li>	
+			<li><a href="#portfolio">Portfolio</a></li>		
+			<li><a href="#contact-form">Contact</a></li>
 			<li><a href="logout-user.php">Logout</a></li>
 		<?php
 		}
@@ -97,7 +99,7 @@
         <p>Hello</p>
         <h1>I'm <font color="#17d1ac">Hoan</font>Nguyen</h1>
         <p class="details">if you want to create a new beautifull Curriculum Vitae.CV is also an important factor to help employers assess the suitability of candidates with the job they are recruiting or not.</p>
-        <a href="#" class="cv-btn">Edit cv</a>
+        <!-- <a href="#" class="cv-btn">Edit cv</a> -->
     <?php
         }
     ?>
@@ -183,7 +185,6 @@
 			}
         }
     ?>
-
 	<?php 
 		$sql = "SELECT * FROM users,portfolio WHERE portfolio.id = users.id and portfolio.id = '$id'"; 
         $res_portfolio = mysqli_query($con,$sql);
