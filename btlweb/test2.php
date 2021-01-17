@@ -60,7 +60,7 @@ $fetch = mysqli_fetch_array($rs);
                         <div class="profile-content">
                             <div class="form-group">
                                 <label>id_about</label>
-                                <input type="text"  placeholder="Input id if you want to delete" name="a0" class="form-control" placeholder="" aria-describedby="helpId">
+                                <input type="text" name="a0" class="form-control" placeholder="" aria-describedby="helpId">
                             </div>
                             <div class="form-group">
                                 <label>title_about</label>

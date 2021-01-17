@@ -131,7 +131,7 @@
         <div class="about-text">
         <h1>About Us</h1>
         <h2><?php echo $fetch_info['title_about'] ?></h2>
-        <p>Enjoy the ultimate web design editor. Divi is like Photoshop or Sketch for the web. It brings an advanced design interface to WordPress that both beginners and experts will fall in love with. It's incredibly smart, super flexible, amazingly powerful and visual by nature. This is how designing for the web is meant to be done.</p>
+        <p><?php echo $fetch_info['content_about'] ?></p>
         <button>View More Details</button>
         </div>
         <!--about-model----------------->
