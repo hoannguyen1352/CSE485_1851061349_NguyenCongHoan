@@ -42,18 +42,18 @@
 	<?php
 		if(($_SESSION['status'] == 'notverified')){
 	?>
-		<a href="home-page.php" class="logo">LOGO</a>
+		<a href="index.php" class="logo">LOGO</a>
 	<?php
 		}else{
 	?>
-		<a href="home-page.php" class="logo"><?php echo $_SESSION['name'] ?></a>
+		<a href="index.php" class="logo"><?php echo $_SESSION['name'] ?></a>
 	<?php
 	}
 	?>
 	<!--menu--------->
 	<div class="toggle"></div>
 	<ul class="menu">
-        <li class="active"><a href="home-page.php" >Home</a></li>	
+        <li class="active"><a href="index.php" >Home</a></li>	
         <?php
 		if($_SESSION['status'] == 'notverified'){
 		?>

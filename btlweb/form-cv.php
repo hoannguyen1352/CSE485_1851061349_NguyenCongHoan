@@ -48,7 +48,7 @@
 	<?php
 		}else{
 	?>
-		<a href="home-page.php" class="logo"><?php echo $_SESSION['name'] ?></a>
+		<a href="index.php" class="logo"><?php echo $_SESSION['name'] ?></a>
 	<?php
 	}
 	?>
@@ -274,3 +274,4 @@
 	</script>
 </body>
 </html>
+

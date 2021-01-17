@@ -42,13 +42,10 @@ include 'tinhsotrang.php';
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: 100px;">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home-page.php">Trang chủ<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">Trang chủ<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Giới thiệu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Liên Hệ</a>
+                        <a class="nav-link" href="index.php">Giới thiệu</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">

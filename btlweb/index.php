@@ -66,7 +66,7 @@ $fetch05 = mysqli_fetch_all($rs01);
 					<?php
 					if ($_SESSION['email'] != 'echmattrang@gmail.com') {
 					?>
-						<li><a href="test2.php">Change CV</a></li>
+						<li><a href="test2.php">ChangeCV</a></li>
 					<?php
 					}
 					?>
@@ -77,7 +77,7 @@ $fetch05 = mysqli_fetch_all($rs01);
 					<?php
 					}
 					?>
-					<li><a href="Change-Pro.php">Change Profile</a></li>
+					<li><a href="edit_pro.php">Change Profile</a></li>
 					<li><a href="logout-user.php">Logout</a></li>
 				<?php
 				}
@@ -120,7 +120,7 @@ $fetch05 = mysqli_fetch_all($rs01);
 			<a href="#"><i class="fab fa-youtube"></i></a>
 		</div>
 	</section>
-	
+
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script type="text/javascript" src="js/JQuery3.3.1.js"></script>

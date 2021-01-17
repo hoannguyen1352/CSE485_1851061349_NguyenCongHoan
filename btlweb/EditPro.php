@@ -70,7 +70,7 @@ include 'connect.php';
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home-page.php">Trang chủ<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">Trang chủ<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="member.php">BackToMemBer</a>
@@ -179,7 +179,7 @@ include 'connect.php';
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Sign Up</button>
-                            <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal"><a href="home.php">Close</a></button>
+                            <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal"><a href="index.php">Close</a></button>
                         </div>
                     </form>
                 </div>
@@ -280,7 +280,7 @@ include 'connect.php';
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Update</button>
-                                <button type="button" class="btn btn-secondary"><a href="members.php">Close</a></button>
+                                <button type="button" class="btn btn-secondary"><a href="member.php">Close</a></button>
                             </div>
                         <?php
                         }

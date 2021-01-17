@@ -31,7 +31,6 @@
         mysqli_query($con,$sql06);
     }
 
-
     if(isset($_POST["save-user"]) && (isset($fetch['avatar'])))
     {
         $profileImageName = time().'_'. $_FILES['profileImage']['name'];

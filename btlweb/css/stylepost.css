@@ -65,4 +65,8 @@ h1{
   .b{
     width: 100%;
   }
+
+  .btn-secondary{
+    margin-top: 0;
+  }
 }

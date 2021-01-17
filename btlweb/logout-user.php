@@ -1,5 +1,6 @@
 <?php
 session_start();
 session_unset();
-header('location: home-page.php');
+header('location: index.php');
 ?>
+

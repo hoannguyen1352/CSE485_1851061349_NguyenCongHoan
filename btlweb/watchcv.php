@@ -150,7 +150,6 @@ $fetch05 = mysqli_fetch_all($rs01);
         </div>
     </section>
 
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="js/JQuery3.3.1.js"></script>

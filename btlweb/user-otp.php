@@ -46,12 +46,11 @@ if($email == false){
                     </div>
                     <div class="form-group">
                         <input class="form-control button" type="submit" name="check" value="Submit">
-                        <button type="close" class="btn btn-primary btn-block"><a href="home-page.php" style="color: black;">Back Home</a></button>
+                        <button type="close" class="btn btn-primary btn-block"><a href="index.php" style="color: black;">Back Home</a></button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    
 </body>
 </html>

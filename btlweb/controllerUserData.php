@@ -63,7 +63,7 @@ if(isset($_POST['signup'])){
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
-                header('location: home-page.php');
+                header('location: index.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";
@@ -91,7 +91,7 @@ if(isset($_POST['signup'])){
                     $_SESSION['status'] = 'verified';
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $password;
-                    header('location: home-page.php');
+                    header('location: index.php');
                 }else{
                     $_SESSION['status'] = 'notverified';
                     $info = "It's look like you haven't still verify your email - $email";
@@ -192,5 +192,4 @@ if(isset($_POST['signup'])){
             }
         }
     }
-
 ?>
