@@ -9,5 +9,5 @@
     if($data!= null && count($data)>0){
         $num = $data[0]['sophantu'];
     }
-    $pages = ceil($num / 20);
+    $pages = ceil($num / 5);
 ?>

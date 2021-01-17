@@ -5,7 +5,6 @@
 	}else{
         $id='';
 	}
-	require_once "connect.php";
 		$sql = "SELECT * FROM users,imformation WHERE imformation.id=users.id and imformation.id = '$id'";
 		$rs = mysqli_query($con,$sql);
 		$fetch = mysqli_fetch_array($rs);
@@ -17,12 +16,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="./css/stylechangepro.css" >
 </head>
-<!------ Include the above in your HEAD tag ---------->
-
 <!--
 
 -->
@@ -169,9 +164,6 @@
 		?>
 	</div>
 </div>
-<center>
-<strong>Powered by HoanNguyen <a href="" target="_blank"></a></strong>
-</center>
 <br>
 <br>
 	<script src="./js/js.js"></script>

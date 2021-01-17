@@ -15,14 +15,16 @@ body{
 
 .a{
   margin-right: 40px;
-  height: 500px;
+  height: 520px;
   margin-bottom: 100px;
   background: #fff;
+  border-radius: 20px;
 }
 
 .b{
-  height: 500px;
+  height: 520px;
   background: #fff;
+  border-radius: 20px;
 }
 
 .profile-userpic img {

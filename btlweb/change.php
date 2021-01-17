@@ -51,7 +51,5 @@
         $sql = "INSERT INTO imformation(avatar,id) VALUES('$profileImageName','$id')";
         mysqli_query($con,$sql);
         }
-    }
-
-    
+    }    
 ?>

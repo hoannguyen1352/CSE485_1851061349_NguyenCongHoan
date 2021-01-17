@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <input class="form-control button" type="submit" name="check-email" value="Continue">
-                        <button type="button" class="btn btn-primary btn-block"><a href="login-user.php">BackLogin</a></button>
+                        <button type="button" class="btn btn-dark btn-block btn-block"><a href="login-user.php">BackLogin</a></button>
                     </div>
                 </form>
             </div>

@@ -36,6 +36,7 @@
                     <div class="link forget-pass text-left"><a href="forgot-password.php">Forgot password?</a></div>
                     <div class="form-group">
                         <input class="form-control button" type="submit" name="login" value="Login">
+                        <button type="submit" class="btn btn-dark btn-block"><a href="home-page.php">Back</a></button>
                     </div>
                     <div class="link login-link text-center">Not yet a member? <a href="signup-user.php">Signup now</a></div>
                 </form>

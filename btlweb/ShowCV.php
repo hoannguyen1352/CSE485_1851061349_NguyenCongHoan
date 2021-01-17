@@ -6,19 +6,17 @@
 		$_SESSION['status'] = 'notverified';
     }
     
-    if(isset($_SESSION['email'])){
-        $email = $_SESSION['email'];
-	}else{
-        $email='';
-	}
+    // if(isset($_SESSION['email'])){
+    //     $email = $_SESSION['email'];
+	// }else{
+    //     $email='';
+	// }
 
-	if(isset($_SESSION['id'])){
-        $id = $_SESSION['id'];
+	if(isset($_GET['useid'])){
+        $id = $_GET['useid'];
 	}else{
         $id='';
 	}
-
-	$sql07 = "SELECT * FROM about,users WHERE about.id=users.id";
 ?>
 <!doctype html>
 <html>
@@ -44,7 +42,7 @@
 	<?php
 		if(($_SESSION['status'] == 'notverified')){
 	?>
-		<a href="#" class="logo">LOGO</a>
+		<a href="home-page.php" class="logo">LOGO</a>
 	<?php
 		}else{
 	?>
@@ -55,12 +53,12 @@
 	<!--menu--------->
 	<div class="toggle"></div>
 	<ul class="menu">
-        <li class="active"><a href="#main" >Home</a></li>	
+        <li class="active"><a href="home-page.php" >Home</a></li>	
         <?php
 		if($_SESSION['status'] == 'notverified'){
 		?>
 			<li><a href="login-user.php">Login</a></li>		
-			<li><a href="signup-user.php">SignUp</a></li>
+            <li><a href="signup-user.php">SignUp</a></li>
 		<?php
 		}else{
 		?>
@@ -84,11 +82,20 @@
 		$sql01 = "SELECT * FROM users,head_cv WHERE head_cv.id = users.id and head_cv.id = '$id'"; 
 		$res_head_cv = mysqli_query($con,$sql01);
 		$fetch_info = mysqli_fetch_assoc($res_head_cv);
-        if($res_head_cv && isset($_SESSION['email']) && isset($fetch_info['content_head_cv'])){
+        if($res_head_cv && isset($fetch_info['content_head_cv'])){
             $content_head_cv = $fetch_info['content_head_cv'];
     ?>
+    <?php
+         $sql07 = "SELECT * FROM users WHERE users.id='$id'";
+         $rs07 = mysqli_query($con,$sql07);
+         $fet = mysqli_fetch_assoc($rs07);
+         if($rs07){
+    ?>
     <p>Hello</p>
-	<h1>I'm <font color="#17d1ac"><?php echo $_SESSION['name'] ?></font></h1>
+    <h1>I'm <font color="#17d1ac"><?php echo $fet['name'] ?></font></h1>
+    <?php
+        }
+    ?>
 	<!--details--------------->
 	<p class="details"><?php echo $fetch_info['content_head_cv'] ?></p>
 	<!--cv button-------------------->
@@ -121,7 +128,7 @@
     <?php 
         $sql = "SELECT * FROM users,about WHERE about.id = users.id and about.id = '$id'"; 
         $res_about = mysqli_query($con,$sql);
-        if($res_about && isset($_SESSION['email'])){
+        if($res_about){
 			$fetch_info = mysqli_fetch_assoc($res_about);
 			if(isset($fetch_info['content_about'])){
             $title_about = $fetch_info['title_about'];
@@ -146,7 +153,7 @@
 	<?php 
         $sql = "SELECT * FROM users,services WHERE services.id = users.id and services.id = '$id'"; 
         $res_service = mysqli_query($con,$sql);
-        if($res_service && isset($_SESSION['email'])){
+        if($res_service){
 			$fetch_service = mysqli_fetch_assoc($res_service);
 			if(isset($fetch_service['content_service'])){
     ?>
@@ -188,7 +195,7 @@
 	<?php 
 		$sql = "SELECT * FROM users,portfolio WHERE portfolio.id = users.id and portfolio.id = '$id'"; 
         $res_portfolio = mysqli_query($con,$sql);
-        if($res_portfolio && isset($_SESSION['email'])){
+        if($res_portfolio){
 			$fetch_portfolio = mysqli_fetch_assoc($res_portfolio);
 			if(isset($fetch_portfolio['content_portfolio'])){
 	?>
