@@ -44,7 +44,7 @@ $fetch = mysqli_fetch_array($rs);
                 }
                 ?>
             </div>
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="margin-top: 50px;">
                 <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">About</a>
                 <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Service</a>
                 <a class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Portfolio</a>
@@ -74,7 +74,7 @@ $fetch = mysqli_fetch_array($rs);
                                 <button type="submit" name="post-about" class="btn btn-primary" id="btn">Post</button>
                                 <button type="submit" name="change-about" class="btn btn-primary" id="btn">Change</button>
                                 <button type="submit" name="delete-about" class="btn btn-primary" id="btn">Delete</button>
-                                <button type="button" class="btn btn-secondary" id="btn"><a href="test2.php">Cancer</a></button>
+                                <button type="button" class="btn btn-danger" id="btn"><a href="test2.php">Cancer</a></button>
                             </div>
                         </div>
                     </form>
@@ -96,7 +96,7 @@ $fetch = mysqli_fetch_array($rs);
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="post-service" class="btn btn-primary" id="btn">Post</button>
-                                <button type="button" class="btn btn-secondary" id="btn"><a href="test2.php">Cancer</a></button>
+                                <button type="button" class="btn btn-danger" id="btn"><a href="test2.php">Cancer</a></button>
                             </div>
                         </div>
                     </form>
@@ -118,7 +118,7 @@ $fetch = mysqli_fetch_array($rs);
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="post-portfolio" class="btn btn-primary" id="btn">Post</button>
-                                <button type="button" class="btn btn-secondary" id="btn"><a href="test2.php">Cancer</a></button>
+                                <button type="button" class="btn btn-danger" id="btn"><a href="test2.php">Cancer</a></button>
                             </div>
                         </div>
                     </form>
@@ -137,7 +137,7 @@ $fetch = mysqli_fetch_array($rs);
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="post-content" class="btn btn-primary" id="btn">Post</button>
-                                <button type="button" class="btn btn-secondary" id="btn"><a href="test2.php">Cancer</a></button>
+                                <button type="button" class="btn btn-danger" id="btn"><a href="test2.php">Cancer</a></button>
                             </div>
                         </div>
                     </form>
@@ -147,10 +147,22 @@ $fetch = mysqli_fetch_array($rs);
     </div>
     <script src="./js/js.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+        const sr = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 2000,
+        reset: true
+    });
+    
+    /*SCROLL NAV*/
+    sr.reveal('body',{delay: 200}); 
+    </script>
 </body>
 
 </html>

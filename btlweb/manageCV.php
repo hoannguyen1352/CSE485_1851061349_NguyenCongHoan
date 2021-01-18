@@ -5,7 +5,6 @@ include 'tinhsotrang.php';
 ?>
 <!doctype html>
 <html lang="en">
-
 <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -20,7 +19,7 @@ include 'tinhsotrang.php';
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="stylesheet" href="./css/member.css">
+    <link rel="stylesheet" href="./css/manageCV.css">
 </head>
 
 <body class="body">
@@ -58,28 +57,36 @@ include 'tinhsotrang.php';
     <div class="container">
         <div class="row">
             <?php
-            require_once "result-pages.php";
-            echo "<table class='table table-bordered table-striped' style='margin-top:70px'>";
+             require_once "connect.php";
+             $current_page = 1;
+             if(isset($_GET['page'])){
+                 $current_page = $_GET['page'];
+             }
+             $index = ($current_page-1)*5;
+             $data = [];
+             $sql05 = "SELECT * FROM users,about WHERE about.id=users.id limit $index ,5";
+             $result = mysqli_query($con,$sql05);
+             $data = mysqli_fetch_array($result);
+            echo "<table class='table table-bordered table-striped'>";
             echo "<thead>";
             echo "<tr>";
             echo "<th>ID</th>";
-            echo "<th>Username</th>";
+            echo "<th>Userame</th>";
             echo "<th>Email</th>";
-            echo "<th>Status</th>";
+            echo "<th>Title_About</th>";
             echo "<th>Action</th>";
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
             foreach ($result as $sanpham) {
                 echo "<tr>";
-                echo "<td>" . $sanpham['id'] . "</td>";
+                echo "<td>" . $sanpham['id_about'] . "</td>";
                 echo "<td>" . $sanpham['name'] . "</td>";
                 echo "<td>" . $sanpham['email'] . "</td>";
-                echo "<td>" . $sanpham['status'] . "</td>";
+                echo "<td>" . $sanpham['title_about'] . "</td>";
                 echo "<td>";
-                echo "<a href='EditPro.php?useid=" . $sanpham['id'] . "' title='View Record' data-toggle='tooltip'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -6 24 24' width='24' height='24' preserveAspectRatio='xMinYMin' class='icon__icon'><path d='M10 12c-5.042.007-10-2.686-10-6S4.984-.017 10 0c5.016.017 10 2.686 10 6s-4.958 5.993-10 6zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z'></path></svg></a>";
-                echo "<a href='EditPro.php?useid=" . $sanpham['id'] . "' title='Update Record' data-toggle='tooltip'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -2 24 24' width='24' height='24' preserveAspectRatio='xMinYMin' class='icon__icon'><path d='M6.502 12.348h2.829l2.707-2.578-1.414-1.347-4.122 3.925zm-1.987 1.905a4.713 4.713 0 0 0-1.002 1.653l-.334.954 1.002-.318a5.046 5.046 0 0 0 1.954-1.15l1.196-1.14H4.515zM14.866 9.77a.92.92 0 0 1 0 1.347 1.036 1.036 0 0 1-1.414 0L7.55 16.738a7.064 7.064 0 0 1-2.737 1.61l-2.899.921c-.523.166-1.09-.103-1.264-.602a.91.91 0 0 1 0-.603l.966-2.76a6.625 6.625 0 0 1 1.69-2.606L9.21 7.076a.92.92 0 0 1 0-1.347 1.036 1.036 0 0 1 1.414 0l4.242-4.04c1.172-1.116 3.071-1.116 4.243 0a2.762 2.762 0 0 1 0 4.04l-4.243 4.04zm-2.828-2.694l1.414 1.347 4.243-4.04a.92.92 0 0 0 0-1.347 1.036 1.036 0 0 0-1.414 0l-4.243 4.04z'></path></svg></a>";
-                echo "<a href='delete.php?useid=" . $sanpham['id'] . "' title='Delete Record' data-toggle='tooltip'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -5 24 24' width='24' height='24' preserveAspectRatio='xMinYMin' class='icon__icon'><path d='M14.414 7l1.414-1.414a1 1 0 0 0-1.414-1.414L13 5.586l-1.414-1.414a1 1 0 1 0-1.414 1.414L11.586 7l-1.414 1.414a1 1 0 1 0 1.414 1.414L13 8.414l1.414 1.414a1 1 0 1 0 1.414-1.414L14.414 7zM7.828 0H18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7.828a2 2 0 0 1-1.414-.586L.707 7.707a1 1 0 0 1 0-1.414L6.414.586A2 2 0 0 1 7.828 0z'></path></svg></a>";
+                echo "<a href='ShowCV.php?useid=" . $sanpham['id'] . "' title='View Record' data-toggle='tooltip'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -6 24 24' width='24' height='24' preserveAspectRatio='xMinYMin' class='icon__icon'><path d='M10 12c-5.042.007-10-2.686-10-6S4.984-.017 10 0c5.016.017 10 2.686 10 6s-4.958 5.993-10 6zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z'></path></svg></a>";
+                echo "<a href='deleteCV.php?useid=" . $sanpham['id'] . "' title='Delete Record' data-toggle='tooltip'><svg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -5 24 24' width='24' height='24' preserveAspectRatio='xMinYMin' class='icon__icon'><path d='M14.414 7l1.414-1.414a1 1 0 0 0-1.414-1.414L13 5.586l-1.414-1.414a1 1 0 1 0-1.414 1.414L11.586 7l-1.414 1.414a1 1 0 1 0 1.414 1.414L13 8.414l1.414 1.414a1 1 0 1 0 1.414-1.414L14.414 7zM7.828 0H18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7.828a2 2 0 0 1-1.414-.586L.707 7.707a1 1 0 0 1 0-1.414L6.414.586A2 2 0 0 1 7.828 0z'></path></svg></a>";
                 echo "</td>";
                 echo "</tr>";
             }
@@ -88,6 +95,12 @@ include 'tinhsotrang.php';
             // }
             ?>
         </div>
+        <?php
+            $sql04 = "SELECT count(id) as spt FROM about ";
+            $result = mysqli_query($con,$sql04);
+            $r = mysqli_fetch_array($result);
+            $pages = ceil($r['spt'] / 5);
+        ?>
         <div class="row">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">

@@ -27,7 +27,6 @@ $fetch05 = mysqli_fetch_all($rs01);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/icon.png">
     <link rel="stylesheet" type="text/css" href="./css/stylewatchcv.css" />
-    <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -39,7 +38,7 @@ $fetch05 = mysqli_fetch_all($rs01);
             <?php
             if (($_SESSION['status'] == 'notverified')) {
             ?>
-                <a href="#" class="logo">WEBCV</a>
+                <a href="index.php" class="logo">WEBCV</a>
             <?php
             } else {
             ?>
@@ -50,10 +49,6 @@ $fetch05 = mysqli_fetch_all($rs01);
             <!--menu--------->
             <div class="toggle"></div>
             <ul class="menu">
-                <!-- <li class="active"><a href="#main" >Home</a></li>	 -->
-                <!-- <li><a href="#about">About</a></li>	
-            <li><a href="#services">Services</a></li>	
-			<li><a href="#portfolio">Portfolio</a></li>	 -->
                 <?php
                 if ($_SESSION['status'] == 'notverified') {
                 ?>
@@ -94,8 +89,9 @@ $fetch05 = mysqli_fetch_all($rs01);
                 echo "<table class='table table-bordered table-striped'>";
                 echo "<thead>";
                 echo "<tr>";
-                echo "<th>Các bản CV</th>";
+                echo "<th>Some CV</th>";
                 echo "<th>Email</th>";
+                echo "<th>About</th>";
                 echo "<th>LinkCV</th>";
                 echo "</tr>";
                 echo "</thead>";
@@ -106,12 +102,13 @@ $fetch05 = mysqli_fetch_all($rs01);
                 }
                 $index = ($current_page-1)*5;
                 $data = [];
-                $sql09 = "SELECT * FROM users limit $index ,5";
+                $sql09 = "SELECT * FROM about,users limit $index ,5";
                 $ketqua = mysqli_query($con, $sql09);
                 foreach ($ketqua as $kq) {
                     echo "<tr>";
                     echo "<td>" . $kq['name'] . "</td>";
                     echo "<td>" . $kq['email'] . "</td>";
+                    echo "<td>" . $kq['title_about'] . "</td>";
                     echo "<td>";
                     echo "<a href='ShowCV.php?useid=" . $kq['id'] . "' title='View Record' data-toggle='tooltip'>ClickHere</a>";
                     echo "</td>";

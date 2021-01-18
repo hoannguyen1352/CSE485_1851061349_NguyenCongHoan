@@ -17,13 +17,18 @@ body{
   margin-right: 40px;
   height: 520px;
   margin-bottom: 100px;
-  background: #fff;
+  background-image: url(../images/b7.jpg);
+  background-repeat: repeat;
+  background-size: cover;
   border-radius: 20px;
 }
 
+
 .b{
   height: 520px;
-  background: #fff;
+  background-image: url(../images/b7.jpg);
+  background-size: cover;
+  background-repeat: repeat;
   border-radius: 20px;
 }
 
@@ -55,6 +60,7 @@ h1{
 
 #btn{
   margin-top: 40px;
+  text-decoration: none;
 }
 
 
@@ -66,7 +72,7 @@ h1{
     width: 100%;
   }
 
-  .btn-secondary{
+  .btn-danger{
     margin-top: 0;
   }
 }

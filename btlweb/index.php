@@ -24,6 +24,55 @@ $fetch05 = mysqli_fetch_all($rs01);
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
+	<style>
+		font{
+			color: Crimson;
+			-webkit-animation-name: example;
+			/* Safari 4.0 - 8.0 */
+			-webkit-animation-duration: 4s;
+			/* Safari 4.0 - 8.0 */
+			animation-name: example;
+			animation-duration: 4s;
+		}
+
+		/* Safari 4.0 - 8.0 */
+		@-webkit-keyframes example {
+			0% {
+				color: Crimson;
+			}
+
+			25% {
+				color: LightSalmon;
+			}
+
+			50% {
+				color: pink;
+			}
+
+			100% {
+				color: purple;
+			}
+		}
+
+		/* Cú pháp tiêu chuẩn */
+		@keyframes example {
+			0% {
+				color: Crimson;
+			}
+
+			25% {
+				color: LightSalmon;
+			}
+
+			50% {
+				color: pink;
+			}
+
+			100% {
+				color: indigo;
+			}
+		}
+	</style>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="shortcut icon" href="images/icon.png">
 	<link rel="stylesheet" type="text/css" href="./css/stylehome.css" />
@@ -50,10 +99,6 @@ $fetch05 = mysqli_fetch_all($rs01);
 			<!--menu--------->
 			<div class="toggle"></div>
 			<ul class="menu">
-				<!-- <li class="active"><a href="#main" >Home</a></li>	 -->
-				<!-- <li><a href="#about">About</a></li>	
-            <li><a href="#services">Services</a></li>	
-			<li><a href="#portfolio">Portfolio</a></li>	 -->
 				<?php
 				if ($_SESSION['status'] == 'notverified') {
 				?>
@@ -74,6 +119,7 @@ $fetch05 = mysqli_fetch_all($rs01);
 					if (($_SESSION['email'] == 'echmattrang@gmail.com')) {
 					?>
 						<li><a href="member.php">Members</a></li>
+						<li><a href="manageCV.php">ManageCV</a></li>
 					<?php
 					}
 					?>
